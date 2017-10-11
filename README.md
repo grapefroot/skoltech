@@ -1,2 +1,2 @@
 # skoltech
-skoltech assignments
+This repo is for Skoltech assignments
