@@ -77,15 +77,15 @@ Big improvement is observed compared to the random assignment.
 
 let $10^{-5} = x$
 
-Consider N iid standard uniform random variables on the interval [0, 1]. Notice, that \[ P(r > x) = P(min_{1 \le n < m \le N}|x_n - x_m| \ge x) = N! * P(r \land X_{(1)} < X_{(2)} < X_{(3)} < \dots < X_{(N)}) \]
+Consider N iid standard uniform random variables on the interval [0, 1]. Notice, that \[ P(r > x) = P(min_{1 \le n < m \le N}|x_n - x_m| \ge x) = N! * P(r \ge x \land X_{(1)} < X_{(2)} < X_{(3)} < \dots < X_{(N)}) \]
 
-To estimate that we need to calculate the volume of the set of \[ V =  \{(x_1, \dots, x_N): \forall_{0 < i < n} \; (x_{i+1} - x_{i}) \ge x\} \]
+To estimate that we need to calculate the volume of the set  \[ V =  \{(x_1, \dots, x_N): \forall_{0 < i < n} \; (x_{i+1} - x_{i}) \ge x\} \]
 
-Now, let's consider map \[f (x_1, \dots, x_N) \rightarrow (x_1, x_2 - x, x_3 - 2x, \dots, x_N - (N-1)x) \]. This map can be represented as a lower-triangular map with ones on the main diagonal. This, this map preserves the volume of the set.
+Now, let's consider map \[f (x_1, \dots, x_N) \rightarrow (x_1, x_2 - x, x_3 - 2x, \dots, x_N - (N-1)x) \]. This map can be represented as a lower-triangular map with ones on the main diagonal. Thus, this map preserves the volume of the set.
 
-The volume of f(V) is volume of \[ \{((x_1, \dots, x_n)) \in [0, 1 - (N-1)*x]^N: \forall_{i=2, \dots, N-1} \; y_i \le y_{i+1} \} \]
+The volume of f(V) is volume of \[ \{(x_1, \dots, x_N) \in [0, 1 - (N-1)*x]^N: \forall_{i=2, \dots, N-1} \; y_i \le y_{i+1} \} \]
 
-This seems to equal to $\frac{[0, 1 - (N-1)*x]^N}{n!}$
+This is equal to $\frac{[0, 1 - (N-1)*x]^N}{N!}$
 
 Then, \[ P(r > x) = (1-(N-1)x)^{N} = (1 - 999*10^{-5})^{1000} \approx 4.4*10^{-5} \] 
 
